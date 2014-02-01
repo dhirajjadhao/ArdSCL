@@ -103,13 +103,15 @@ digitalWrite(i,LOW);
 
 void loop()
 {
-if(Serial.available() == 12)
+
+  while(Serial.available() == 12)
 {
 for(int i = 0;i< 12;i++)
 {
 Input_Buffer[i] = Serial.read();
 }
 
+//Serial.println(Input_Buffer);
 Id = (Input_Buffer[0] - '0')*10 + (Input_Buffer[1] - '0'); //  Stores the Incoming Device Id Characters
 
 if(Id  == Device_Id)
@@ -203,14 +205,6 @@ Pin_No = (Input_Buffer[2] - '0')*100 + (Input_Buffer[3] - '0')*10 + (Input_Buffe
 
 Serial.flush();
 delay(20);
-}
-
-
-
-
-else
-{
-Serial.flush();
 }
 
 
