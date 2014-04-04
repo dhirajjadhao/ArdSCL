@@ -1,7 +1,7 @@
 /*
 
         ARDUINO SERIAL CONTROL LIBRARY OR ArdSCL  VERSION 1.0
-                   Copyright 2013 Dhiraj Jadhao
+                   Copyright 2014 Dhiraj Jadhao
 
   This Library works with All arduino compatible boards.
   Maximum 100 boards can be controlled at a time using this library.
@@ -57,6 +57,7 @@
  ** More details about this library can be found at:
  ** http://ardscl.blogspot.com 
 
+ ** Email: dhirajjadhao@gmail.com
 
 */
 
