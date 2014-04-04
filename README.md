@@ -1,30 +1,24 @@
-ArdSCL
-======
+ArdSCL : Arduino Serial Control Library
+=======================================
 
-Arduino Serial Control Library : Let you control Arduino over Serial
+ArdSCL, lets you control Arduino over Serial.
 
+ArdSCL library works with all arduino compatible board. It uses ArdSCL protocol which is a string of 12 chracters.
 
-ARDUINO SERIAL CONTROL LIBRARY :-  ArdSCL
+## ArdSCL Protocol
 
-ArdSCL library works with all arduino compatible board. ArdSCL library uses ArdSCL protocol which is nothing but a string set of 12 chracters.
+Format of Protocol:   
+                      XX        -- XXX        -- X        -- X       -- X          -- XXX
 
-Library comes with standard sketch, once you upload the code to the board you will get its full control over Serial.
+  Device ID -- Pin Number -- Pin Mode --Pin Type -- Pin Option -- Pin Value
 
-ArdSCL Protocol:
-
-ArdSCL protocol is a String of 12 characters as follows.
-
-
-Format of Protocol:   XX--XXX--X--X--X--XXX
-      Device ID--Pin Number--Pin Mode--Pin Type--Pin Option--Pin Value
-
-Device ID:
+#Device ID:
 
 1st and 2nd characters XX:  Specify Device ID
 
 So device id can be anything from 00 to 99 and can be changed in the ArdSCL sketch, so whatever device id you specify on your sketch while uploading that sketch to your arduino board, your board will get that Device ID and then it can be identified by the Device ID.
 
-Pin Number:
+#Pin Number:
 
 3rd, 4th and 5th characters XXX: Specify Pin Number.
 
@@ -37,7 +31,7 @@ For Analog Pin: It can take values form A00 to A99(Must be valid for your board.
 * It means if you want to read Analog Pin2 then it must be specified as A02 or if you want to read Analog Pin13 then must be specified as A13.
 
 
-Pin Mode:
+#Pin Mode:
 
 6th character X: Specify Pin Mode.
 
@@ -45,7 +39,7 @@ If you want to set pinMode as Input then it should be specified as "I".
 And if you want to set pinMode as Output then it should be specified as "O".
 
 
-Pin Type:
+#Pin Type:
 
 
 7th character X: Specify Pin Type.
@@ -55,7 +49,7 @@ If you want to set pin type as Analog then it should be specified as "A".
 If you want to set pin type as Servo pin then it should be specified as "S".
 
 
-Pin Option:
+#Pin Option:
 
 8th character X: Specify Pin Option.
 
@@ -63,7 +57,7 @@ If you want to Read Pin then it must be specified as "R".
 If you want to Write Pin then it must be specified as "W".
 
 
-Pin Value:
+#Pin Value:
 
 9th, 10th, 11th, 12th characters XXXX: Specify Pin value.
 
@@ -77,11 +71,8 @@ For Servo Function it must be specified as: 0000 or 0180.
 
 If you want to Read any of the Analog or Digital Pin then leave last 4 chracters in the Protocol as 0000, as it doesn't matter and Analog or Digital value of the Pin will be Serially Printed.
 
+Example:
 
-
-
-
-  Example:  
 If you want to turm on the LED on 13th pin of Arduino then protocol will be
     
                   Protocol:  00013ODW0001 -- Turns ON pin 13
@@ -96,5 +87,6 @@ If you want to turm on the LED on 13th pin of Arduino then protocol will be
              W -  Pin Option Write
              0001 - Pin Value 0001 = 1 = HIGH
             
-            
-             In this way you can control arduino as you wish according to ArdSCL Protocol.
+
+Library comes with standard sketch, once you upload the code to the board you will get its full control over Serial.
+
