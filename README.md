@@ -64,9 +64,9 @@ If you want to Write Pin then it must be specified as "W".
 
 For digitalWrite it must be specified as: 0001 or 0000  (HIGH or LOW).
 
-For analogWrite it must be specified as: 0000 or 0255.
+For analogWrite it must be specified as: 0000 to 0255.
 
-For Servo Function it must be specified as: 0000 or 0180.
+For Servo Function it must be specified as: 0000 to 0180.
 
 
 If you want to Read any of the Analog or Digital Pin then leave last 4 chracters in the Protocol as 0000, as it doesn't matter and Analog or Digital value of the Pin will be Serially Printed.
